@@ -80,7 +80,15 @@ class ph {
         if (is_null($val)) return 'NULL';
         if (true===$val) return 'TRUE';
         if (false===$val) return 'FALSE';
-        return (string)$val;
+        try {
+            return strval($val);
+        }
+        catch (Exception $e){}
+        ob_start();
+        print_r($val);
+        $val = ob_get_contents();
+        ob_end_clean();
+        return $val;
     }
 
     static function p($stuff=''){ // print a paragraph

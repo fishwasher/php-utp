@@ -9,6 +9,8 @@ Requirements: PHP5, webserver
 
 Current version: 0.1
 
+Demo URL: http://fishwasher.com/demo/php-utp/
+
 ## Directories and Files
 
     /lib                <-- place classes/scripts being tested here, or specify another location as TESTDIR in mute.php, and get rid of this one

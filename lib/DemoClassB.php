@@ -21,6 +21,10 @@ class DemoClassB {
     function get(){
         return $this->data;
     }
+    
+    function __toString(){
+        return __CLASS__;
+    }
 
 }
 ?>

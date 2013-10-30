@@ -67,6 +67,21 @@ class ph {
     static function squote($s){ // wrap string with single quotes
         return "'" . str_replace("'", '\'', $s) . "'";
     }
+    
+    static function fmt($val){ // format value as printable string
+        if (is_array($val)) {
+            $buf = array();
+            foreach ($val as $k=>$v) {
+                $buf[] = self::fmt($k) . '=>' . self::fmt($v);
+            }
+            return 'array(' . implode(', ', $buf) . ')';
+        }
+        if (is_string($val)) return self::quote($val);
+        if (is_null($val)) return 'NULL';
+        if (true===$val) return 'TRUE';
+        if (false===$val) return 'FALSE';
+        return (string)$val;
+    }
 
     static function p($stuff=''){ // print a paragraph
         if (is_array($stuff) || is_object($stuff)){

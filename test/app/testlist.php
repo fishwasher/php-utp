@@ -17,8 +17,13 @@ $testdir = TESTDIR;
 $testpref = 'test.';
 $testsuf = '.php';
 
-//$listhead = "Test List";
-$title = "Unit Test Page at " . $_SERVER['HTTP_HOST'];
+$product = "Unit Test Page";
+$productcode = "php-utp";
+$version = '0.1';
+$year = '2013';
+$author = "Vlad Podvorny";
+$github = "https://github.com/fishwasher/php-utp";
+$title = $product . " at " . $_SERVER['HTTP_HOST'];
 
 $testlist = array(); // list of pairs testname => description
 
@@ -48,7 +53,7 @@ body {font:10pt arial,helvetica,sans-serif; padding:0; margin:0;}
 .infobox ul li a {font:bold 10pt arial,helvetica,sans-serif; text-decoration:none; color:#03c; width:100%; height:100%; display:block;}
 .infobox ul li a:hover {color:#000; background-color:#ccc;}
 
-.footer {padding:4px; font-size:8pt; clear:both;}
+.footer {padding:4px; font-size:8pt; clear:both; text-align:center;}
 </style>
 </head>
 <body>
@@ -92,5 +97,5 @@ if ($testlist) { ?>
 <?php } else { ?><p class="error">Test directory has no test files!</p><?php }
 ?>
 </div>
-<div class="footer"></div>
+<div class="footer"><?php echo $product; ?> version <?php echo $version; ?> &nbsp; &nbsp; &copy;<?php echo $year . ' ' . $author; ?> &nbsp; &nbsp; <a href="<?php echo $github; ?>" target=\"_blank\"><strong><?php echo $productcode; ?></strong> at GitHub</a></div>
 </body></html>

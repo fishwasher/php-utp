@@ -1,6 +1,6 @@
 <?php
 /**
-Exception Demo
+Exception demo
 */
 throw new Exception("Hello, dude!");
 ?>
